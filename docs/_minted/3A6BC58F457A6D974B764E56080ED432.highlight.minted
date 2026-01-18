@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sAtom}{?}\PYG{n+nv}{Z}\PYG{p}{[} \PYG{l+s+sAtom}{razlog\PYGZus{}odbijanja} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{l+s+sAtom}{crna\PYGZus{}lista} \PYG{p}{]} \PYG{p}{:\PYGZhy{}}
+  \PYG{l+s+sAtom}{?}\PYG{n+nv}{Z} \PYG{l+s+sAtom}{:} \PYG{l+s+sAtom}{zahtjev\PYGZus{}najma}\PYG{p}{[} \PYG{l+s+sAtom}{kupac} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{l+s+sAtom}{?}\PYG{n+nv}{K} \PYG{p}{],}
+  \PYG{l+s+sAtom}{?}\PYG{n+nv}{K} \PYG{l+s+sAtom}{:} \PYG{l+s+sAtom}{kupac}\PYG{p}{[} \PYG{l+s+sAtom}{na\PYGZus{}crnoj\PYGZus{}listi} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{l+s+sAtom}{true} \PYG{p}{].}
+\end{MintedVerbatim}
