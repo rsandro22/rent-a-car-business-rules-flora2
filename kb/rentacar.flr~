@@ -1,0 +1,172 @@
+/* ------------------------------------------------------------
+   Rent-a-car baza znanja (Flora-2 / F-logika)
+   - klase + shema (=>)
+   - objekti (F-molekule)
+   - metode/pravila (:-) i aritmetika (\is)
+   ------------------------------------------------------------ */
+
+/* --- Hijerarhija klasa (klasa_p :: klasa_n) --- */
+customer :: object.
+car :: object.
+rentalRequest :: object.
+
+/* --- Shema (=> tip) --- */
+customer[
+  age => \integer,
+  licenseYears => \integer,
+  blacklisted => \boolean,
+  trafficOffenses => \integer
+].
+
+car[
+  category => \string,
+  luxury => \boolean,
+  value => \integer
+].
+
+rentalRequest[
+  customer => customer,
+  car => car,
+  durationDays => \integer,
+  crossBorder => \boolean,
+  additionalDriver => \boolean,
+
+  /* metode (rezultati se dobivaju pravilima) */
+  razlog_odbijanja => \string,
+  uvjet => \string,
+  depozit => \integer
+].
+
+/* --- Podaci (F-molekule: objekt : klasa[ atribut -> vrijednost, ... ]) --- */
+john : customer[
+  age -> 22,
+  licenseYears -> 3,
+  blacklisted -> false,
+  trafficOffenses -> 0
+].
+
+mark : customer[
+  age -> 19,
+  licenseYears -> 1,
+  blacklisted -> false,
+  trafficOffenses -> 2
+].
+
+ivan : customer[
+  age -> 30,
+  licenseYears -> 10,
+  blacklisted -> true,
+  trafficOffenses -> 0
+].
+
+car1 : car[
+  category -> "economy",
+  luxury -> false,
+  value -> 15000
+].
+
+car2 : car[
+  category -> "suv",
+  luxury -> false,
+  value -> 30000
+].
+
+car3 : car[
+  category -> "luxury",
+  luxury -> true,
+  value -> 60000
+].
+
+req1 : rentalRequest[
+  customer -> john,
+  car -> car1,
+  durationDays -> 5,
+  crossBorder -> false,
+  additionalDriver -> false
+].
+
+req2 : rentalRequest[
+  customer -> mark,
+  car -> car2,
+  durationDays -> 3,
+  crossBorder -> true,
+  additionalDriver -> false
+].
+
+req3 : rentalRequest[
+  customer -> ivan,
+  car -> car3,
+  durationDays -> 7,
+  crossBorder -> false,
+  additionalDriver -> true
+].
+
+/* --- Pomoćne činjenice --- */
+minAge("economy", 18).
+minAge("suv", 21).
+minAge("luxury", 25).
+
+baseDeposit("economy", 300).
+baseDeposit("suv", 500).
+baseDeposit("luxury", 1000).
+
+/* --- Metode / pravila (kao u primjeru starost/1:  ... :- ... , ... \is ... ) --- */
+
+/* Razlozi odbijanja */
+?Req[ razlog_odbijanja -> "blacklisted" ] :-
+  ?Req : rentalRequest[ customer -> ?C ],
+  ?C : customer[ blacklisted -> true ].
+
+?Req[ razlog_odbijanja -> "license_too_new" ] :-
+  ?Req : rentalRequest[ customer -> ?C ],
+  ?C : customer[ licenseYears -> ?Y ],
+  ?Y < 1.
+
+?Req[ razlog_odbijanja -> "underage_for_category" ] :-
+  ?Req : rentalRequest[ customer -> ?C, car -> ?Car ],
+  ?C : customer[ age -> ?Age ],
+  ?Car : car[ category -> ?Cat ],
+  minAge(?Cat, ?Min),
+  ?Age < ?Min.
+
+?Req[ razlog_odbijanja -> "too_many_offenses_for_crossborder" ] :-
+  ?Req : rentalRequest[ crossBorder -> true, customer -> ?C ],
+  ?C : customer[ trafficOffenses -> ?O ],
+  ?O >= 2.
+
+/* Uvjeti (npr. za doplate/depozit) */
+?Req[ uvjet -> "increased_deposit_crossborder" ] :-
+  ?Req : rentalRequest[ crossBorder -> true ].
+
+?Req[ uvjet -> "increased_deposit_luxury" ] :-
+  ?Req : rentalRequest[ car -> ?Car ],
+  ?Car : car[ luxury -> true ].
+
+?Req[ uvjet -> "young_driver_fee" ] :-
+  ?Req : rentalRequest[ customer -> ?C ],
+  ?C : customer[ age -> ?Age ],
+  ?Age < 23.
+
+/* Doplate (bez negacije: dva pravila daju 200 ili 0, 500 ili 0) */
+crossborder_fee(?Req, 200) :-
+  ?Req : rentalRequest[ crossBorder -> true ].
+
+crossborder_fee(?Req, 0) :-
+  ?Req : rentalRequest[ crossBorder -> false ].
+
+luxury_fee(?Req, 500) :-
+  ?Req : rentalRequest[ car -> ?Car ],
+  ?Car : car[ luxury -> true ].
+
+luxury_fee(?Req, 0) :-
+  ?Req : rentalRequest[ car -> ?Car ],
+  ?Car : car[ luxury -> false ].
+
+/* Depozit (metoda depozit -> ?Dep) */
+?Req[ depozit -> ?Dep ] :-
+  ?Req : rentalRequest[ car -> ?Car ],
+  ?Car : car[ category -> ?Cat ],
+  baseDeposit(?Cat, ?Base),
+  crossborder_fee(?Req, ?CB),
+  luxury_fee(?Req, ?LX),
+  ?Dep \is ?Base + ?CB + ?LX.

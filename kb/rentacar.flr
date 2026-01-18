@@ -1,0 +1,264 @@
+kupac :: object.
+vozilo :: object.
+zahtjev_najma :: object.
+
+kupac[
+  dob => integer,
+  godine_dozvole => integer,
+  na_crnoj_listi => boolean,
+  prometni_prekrsaji => integer
+].
+
+vozilo[
+  kategorija => symbol,     
+  luksuzno => boolean,
+  vrijednost => integer,
+  godiste => integer,
+  automatik => boolean	
+].
+
+zahtjev_najma[
+  kupac => kupac,
+  vozilo => vozilo,
+  trajanje_dana => integer,
+  prelazak_granice => boolean,
+  dodatni_vozac => boolean,
+
+  razlog_odbijanja => symbol,
+  uvjet => symbol,
+  depozit => integer
+].
+
+
+ana_horvat : kupac[
+  dob -> 27,
+  godine_dozvole -> 7,
+  na_crnoj_listi -> false,
+  prometni_prekrsaji -> 0
+].
+
+marko_kovac : kupac[
+  dob -> 22,
+  godine_dozvole -> 3,
+  na_crnoj_listi -> false,
+  prometni_prekrsaji -> 1
+].
+
+ivana_maric : kupac[
+  dob -> 19,
+  godine_dozvole -> 1,
+  na_crnoj_listi -> false,
+  prometni_prekrsaji -> 2
+].
+
+petar_novak : kupac[
+  dob -> 20,
+  godine_dozvole -> 0,
+  na_crnoj_listi -> false,
+  prometni_prekrsaji -> 0
+].
+
+dario_babic : kupac[
+  dob -> 30,
+  godine_dozvole -> 10,
+  na_crnoj_listi -> true,
+  prometni_prekrsaji -> 0
+].
+
+mate_klaric : kupac[
+  dob -> 45,
+  godine_dozvole -> 20,
+  na_crnoj_listi -> false,
+  prometni_prekrsaji -> 3
+].
+
+
+skoda_fabia_2020 : vozilo[
+  kategorija -> economy,
+  luksuzno -> false,
+  vrijednost -> 12000,
+  godiste -> 2020,
+  automatik -> false			   
+].
+
+vw_golf_2019 : vozilo[
+  kategorija -> economy,
+  luksuzno -> false,
+  vrijednost -> 15000,
+  godiste -> 2019,
+  automatik -> true		       
+].
+
+bmw_x5_2021 : vozilo[
+  kategorija -> suv,
+  luksuzno -> false,
+  vrijednost -> 55000,
+  godiste -> 2021,
+  automatik -> true		      
+].
+
+toyota_rav4_2020 : vozilo[
+  kategorija -> suv,
+  luksuzno -> false,
+  vrijednost -> 35000,
+  godiste -> 2020,
+  automatik -> false			   
+].
+
+mercedes_e_class_2022 : vozilo[
+  kategorija -> luxury,
+  luksuzno -> true,
+  vrijednost -> 70000,
+  godiste -> 2022,
+  automatik -> true				
+].
+
+audi_a8_2021 : vozilo[
+  kategorija -> luxury,
+  luksuzno -> true,
+  vrijednost -> 90000,
+  godiste -> 2021,
+  automatik -> true		       
+].
+
+
+zht_kovac_golf_2026_01_10 : zahtjev_najma[
+  kupac -> marko_kovac,
+  vozilo -> vw_golf_2019,
+  trajanje_dana -> 5,
+  prelazak_granice -> false,
+  dodatni_vozac -> false
+].
+
+zht_maric_x5_2026_01_12 : zahtjev_najma[
+  kupac -> ivana_maric,
+  vozilo -> bmw_x5_2021,
+  trajanje_dana -> 3,
+  prelazak_granice -> true,
+  dodatni_vozac -> false
+].
+
+zht_babic_eclass_2026_01_13 : zahtjev_najma[
+  kupac -> dario_babic,
+  vozilo -> mercedes_e_class_2022,
+  trajanje_dana -> 7,
+  prelazak_granice -> false,
+  dodatni_vozac -> true
+].
+
+zht_novak_fabia_2026_01_14 : zahtjev_najma[
+  kupac -> petar_novak,
+  vozilo -> skoda_fabia_2020,
+  trajanje_dana -> 2,
+  prelazak_granice -> false,
+  dodatni_vozac -> false
+].
+
+zht_horvat_rav4_2026_01_15 : zahtjev_najma[
+  kupac -> ana_horvat,
+  vozilo -> toyota_rav4_2020,
+  trajanje_dana -> 4,
+  prelazak_granice -> false,
+  dodatni_vozac -> true
+].
+
+zht_klaric_rav4_2026_01_16 : zahtjev_najma[
+  kupac -> mate_klaric,
+  vozilo -> toyota_rav4_2020,
+  trajanje_dana -> 3,
+  prelazak_granice -> true,
+  dodatni_vozac -> true
+].
+
+zht_horvat_a8_2026_01_17 : zahtjev_najma[
+  kupac -> ana_horvat,
+  vozilo -> audi_a8_2021,
+  trajanje_dana -> 6,
+  prelazak_granice -> true,
+  dodatni_vozac -> false
+].
+
+zht_kovac_eclass_2026_01_18 : zahtjev_najma[
+  kupac -> marko_kovac,
+  vozilo -> mercedes_e_class_2022,
+  trajanje_dana -> 2,
+  prelazak_granice -> false,
+  dodatni_vozac -> false
+].
+
+
+minimalna_dob(economy, 18).
+minimalna_dob(suv, 21).
+minimalna_dob(luxury, 25).
+
+osnovni_depozit(economy, 300).
+osnovni_depozit(suv, 500).
+osnovni_depozit(luxury, 1000).
+
+
+?Z[ razlog_odbijanja -> crna_lista ] :-
+  ?Z : zahtjev_najma[ kupac -> ?K ],
+  ?K : kupac[ na_crnoj_listi -> true ].
+
+?Z[ razlog_odbijanja -> nedovoljno_iskustva ] :-
+  ?Z : zahtjev_najma[ kupac -> ?K ],
+  ?K : kupac[ godine_dozvole -> ?G ],
+  ?G < 1.
+
+?Z[ razlog_odbijanja -> premlad_za_kategoriju ] :-
+  ?Z : zahtjev_najma[ kupac -> ?K, vozilo -> ?V ],
+  ?K : kupac[ dob -> ?D ],
+  ?V : vozilo[ kategorija -> ?Kat ],
+  minimalna_dob(?Kat, ?Min),
+  ?D < ?Min.
+
+?Z[ razlog_odbijanja -> previse_prekrsaja_za_granicu ] :-
+  ?Z : zahtjev_najma[ prelazak_granice -> true, kupac -> ?K ],
+  ?K : kupac[ prometni_prekrsaji -> ?P ],
+  ?P >= 2.
+
+
+?Z[ uvjet -> povecani_depozit_granica ] :-
+  ?Z : zahtjev_najma[ prelazak_granice -> true ].
+
+?Z[ uvjet -> povecani_depozit_luksuz ] :-
+  ?Z : zahtjev_najma[ vozilo -> ?V ],
+  ?V : vozilo[ luksuzno -> true ].
+
+?Z[ uvjet -> mladi_vozac ] :-
+  ?Z : zahtjev_najma[ kupac -> ?K ],
+  ?K : kupac[ dob -> ?D ],
+  ?D < 23.
+
+?Z[ uvjet -> dodatni_vozac ] :-
+  ?Z : zahtjev_najma[ dodatni_vozac -> true ].
+
+
+doplata_granica(?Z, 200) :-
+  ?Z : zahtjev_najma[ prelazak_granice -> true ].
+
+doplata_granica(?Z, 0) :-
+  ?Z : zahtjev_najma[ prelazak_granice -> false ].
+
+doplata_luksuz(?Z, 500) :-
+  ?Z : zahtjev_najma[ vozilo -> ?V ],
+  ?V : vozilo[ luksuzno -> true ].
+
+doplata_luksuz(?Z, 0) :-
+  ?Z : zahtjev_najma[ vozilo -> ?V ],
+  ?V : vozilo[ luksuzno -> false ].
+
+doplata_dodatni_vozac(?Z, 100) :-
+  ?Z : zahtjev_najma[ dodatni_vozac -> true ].
+
+doplata_dodatni_vozac(?Z, 0) :-
+  ?Z : zahtjev_najma[ dodatni_vozac -> false ].
+
+?Z[ depozit -> ?Dep ] :-
+  ?Z : zahtjev_najma[ vozilo -> ?V ],
+  ?V : vozilo[ kategorija -> ?Kat ],
+  osnovni_depozit(?Kat, ?Osn),
+  doplata_granica(?Z, ?DG),
+  doplata_luksuz(?Z, ?DL),
+  doplata_dodatni_vozac(?Z, ?DDV),
+  ?Dep \is ?Osn + ?DG + ?DL + ?DDV.

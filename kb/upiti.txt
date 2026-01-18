@@ -1,0 +1,64 @@
+//Osnovni pregled baze
+
+?k:kupac.
+?k:kupac[dob -> ?dob, godine_dozvole -> ?gd].
+?v:vozilo[kategorija -> ?kat, luksuzno -> ?lux].
+
+
+//Pregled zahtjeva za najam
+
+?z:zahtjev_najma.
+?z:zahtjev_najma[kupac -> ?k, vozilo -> ?v].
+
+?z:zahtjev_najma[
+  kupac -> ?k,
+  vozilo -> ?v,
+  trajanje_dana -> ?dani,
+  prelazak_granice -> ?granica,
+  dodatni_vozac -> ?dv
+].
+
+
+//Razlozi odbijanja
+
+?z:zahtjev_najma[razlog_odbijanja -> ?razlog].
+?z:zahtjev_najma[razlog_odbijanja -> crna_lista].
+?z:zahtjev_najma[razlog_odbijanja -> premlad_za_kategoriju].
+?z:zahtjev_najma[razlog_odbijanja -> previse_prekrsaja_za_granicu].
+
+
+//Poslovni uvjeti
+
+?z:zahtjev_najma[uvjet -> ?uvjet].
+?z:zahtjev_najma[uvjet -> povecani_depozit_granica].
+?z:zahtjev_najma[uvjet -> povecani_depozit_luksuz].
+?z:zahtjev_najma[uvjet -> dodatni_vozac].
+?z:zahtjev_najma[uvjet -> mladi_vozac].
+
+
+//Depozit
+
+?z:zahtjev_najma[depozit -> ?depozit].
+
+zht_horvat_a8_2026_01_17:zahtjev_najma[depozit -> ?d].
+
+?z:zahtjev_najma[vozilo -> ?v],
+?v:vozilo[luksuzno -> true],
+?z:zahtjev_najma[depozit -> ?d].
+
+
+//Kombinirani uvjeti
+
+?z:zahtjev_najma[kupac -> ?k, vozilo -> ?v],
+?z:zahtjev_najma[razlog_odbijanja -> ?r].
+
+?z:zahtjev_najma[kupac -> ?k, vozilo -> ?v],
+?z:zahtjev_najma[uvjet -> ?u].
+
+?z:zahtjev_najma[kupac -> ?k, vozilo -> ?v],
+?z:zahtjev_najma[depozit -> ?d].
+
+
+
+
+
