@@ -1,0 +1,274 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{kifer2008flora2}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=fb41d025966f3abfc40ee0309dc4c99d}{%
+           family={Kifer},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=39e662c5e3b05c477f1d97b0579ca804}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Guizhen},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \strng{fullhash}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \strng{fullhashraw}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \strng{bibnamehash}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \strng{authorbibnamehash}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \strng{authornamehash}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \strng{authorfullhash}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \strng{authorfullhashraw}{dc8d8b44773ebe789119cb2bf295a4c5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theoretical Computer Science}
+      \field{note}{Pogledano: 16.01.2026.}
+      \field{number}{1--3}
+      \field{title}{Flora-2: An Object-Oriented Knowledge Base Language}
+      \field{volume}{396}
+      \field{year}{2008}
+      \field{pages}{243\bibrangedash 260}
+      \range{pages}{18}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304397508001449
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304397508001449
+      \endverb
+    \endentry
+    \entry{jackson1999expert}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b19ad6263a7cd7135c582d3ee7f6d6d1}{%
+           family={Jackson},
+           familyi={J\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \strng{fullhash}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \strng{fullhashraw}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \strng{bibnamehash}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \strng{authorbibnamehash}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \strng{authornamehash}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \strng{authorfullhash}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \strng{authorfullhashraw}{b19ad6263a7cd7135c582d3ee7f6d6d1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Introduction to Expert Systems}
+      \field{year}{1999}
+    \endentry
+    \entry{vanharmelen2008knowledge}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ee480b6d2fd2c627ffb033d94c9691af}{%
+           family={Harmelen},
+           familyi={H\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=3f9f7c9937297077325233d345cf9c91}{%
+           family={Lifschitz},
+           familyi={L\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=2b872bd60c94ce5c565fe4c2f7f2d904}{%
+           family={Porter},
+           familyi={P\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{28a37dc31e5f6ba7a7da0e63132c91a6}
+      \strng{fullhash}{5d60f7de00aa997e7212d558ef39b012}
+      \strng{fullhashraw}{5d60f7de00aa997e7212d558ef39b012}
+      \strng{bibnamehash}{5d60f7de00aa997e7212d558ef39b012}
+      \strng{authorbibnamehash}{5d60f7de00aa997e7212d558ef39b012}
+      \strng{authornamehash}{28a37dc31e5f6ba7a7da0e63132c91a6}
+      \strng{authorfullhash}{5d60f7de00aa997e7212d558ef39b012}
+      \strng{authorfullhashraw}{5d60f7de00aa997e7212d558ef39b012}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations of Artificial Intelligence}
+      \field{note}{Pogledano: 16.01.2026.}
+      \field{title}{Handbook of Knowledge Representation}
+      \field{volume}{3}
+      \field{year}{2008}
+      \field{pages}{1\bibrangedash 28}
+      \range{pages}{28}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/bookseries/foundations-of-artificial-intelligence/vol/3
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/bookseries/foundations-of-artificial-intelligence/vol/3
+      \endverb
+    \endentry
+    \entry{lloyd1987foundations}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=afd6041a53f7a259cd65a806e0741dd6}{%
+           family={Lloyd},
+           familyi={L\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{afd6041a53f7a259cd65a806e0741dd6}
+      \strng{fullhash}{afd6041a53f7a259cd65a806e0741dd6}
+      \strng{fullhashraw}{afd6041a53f7a259cd65a806e0741dd6}
+      \strng{bibnamehash}{afd6041a53f7a259cd65a806e0741dd6}
+      \strng{authorbibnamehash}{afd6041a53f7a259cd65a806e0741dd6}
+      \strng{authornamehash}{afd6041a53f7a259cd65a806e0741dd6}
+      \strng{authorfullhash}{afd6041a53f7a259cd65a806e0741dd6}
+      \strng{authorfullhashraw}{afd6041a53f7a259cd65a806e0741dd6}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Pogledano: 16.01.2026.}
+      \field{title}{Foundations of Logic Programming}
+      \field{year}{1987}
+      \verb{urlraw}
+      \verb https://books.google.ba/books?id=TeKpCAAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.ba/books?id=TeKpCAAAQBAJ
+      \endverb
+    \endentry
+    \entry{russell2021ai}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=143fa183327d9fcd9de18eec99d6ca97}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5de798d5fa3c0236c0478134cd23f52a}{%
+           family={Norvig},
+           familyi={N\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{b280605b721b4ebcba5395298499f924}
+      \strng{fullhash}{b280605b721b4ebcba5395298499f924}
+      \strng{fullhashraw}{b280605b721b4ebcba5395298499f924}
+      \strng{bibnamehash}{b280605b721b4ebcba5395298499f924}
+      \strng{authorbibnamehash}{b280605b721b4ebcba5395298499f924}
+      \strng{authornamehash}{b280605b721b4ebcba5395298499f924}
+      \strng{authorfullhash}{b280605b721b4ebcba5395298499f924}
+      \strng{authorfullhashraw}{b280605b721b4ebcba5395298499f924}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{note}{Pogledano: 16.01.2026.}
+      \field{title}{Artificial Intelligence: A Modern Approach}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://people.engr.tamu.edu/guni/csce625/slides/AI.pdf
+      \endverb
+      \verb{url}
+      \verb https://people.engr.tamu.edu/guni/csce625/slides/AI.pdf
+      \endverb
+    \endentry
+    \entry{ross2003business}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=87209b89ed34a2825e4a154d15e41f46}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{87209b89ed34a2825e4a154d15e41f46}
+      \strng{fullhash}{87209b89ed34a2825e4a154d15e41f46}
+      \strng{fullhashraw}{87209b89ed34a2825e4a154d15e41f46}
+      \strng{bibnamehash}{87209b89ed34a2825e4a154d15e41f46}
+      \strng{authorbibnamehash}{87209b89ed34a2825e4a154d15e41f46}
+      \strng{authornamehash}{87209b89ed34a2825e4a154d15e41f46}
+      \strng{authorfullhash}{87209b89ed34a2825e4a154d15e41f46}
+      \strng{authorfullhashraw}{87209b89ed34a2825e4a154d15e41f46}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Pogledano: 16.01.2026.}
+      \field{title}{Principles of the Business Rule Approach}
+      \field{year}{2003}
+      \verb{urlraw}
+      \verb https://books.google.ba/books?id=Uyv9hMOt6BsC
+      \endverb
+      \verb{url}
+      \verb https://books.google.ba/books?id=Uyv9hMOt6BsC
+      \endverb
+    \endentry
+    \entry{flora2manual}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=fb41d025966f3abfc40ee0309dc4c99d}{%
+           family={Kifer},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb41d025966f3abfc40ee0309dc4c99d}
+      \strng{fullhash}{fb41d025966f3abfc40ee0309dc4c99d}
+      \strng{fullhashraw}{fb41d025966f3abfc40ee0309dc4c99d}
+      \strng{bibnamehash}{fb41d025966f3abfc40ee0309dc4c99d}
+      \strng{authorbibnamehash}{fb41d025966f3abfc40ee0309dc4c99d}
+      \strng{authornamehash}{fb41d025966f3abfc40ee0309dc4c99d}
+      \strng{authorfullhash}{fb41d025966f3abfc40ee0309dc4c99d}
+      \strng{authorfullhashraw}{fb41d025966f3abfc40ee0309dc4c99d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://flora.sourceforge.net}}
+      \field{note}{Pogledano: 16.01.2026.}
+      \field{title}{Flora-2 User’s Manual}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

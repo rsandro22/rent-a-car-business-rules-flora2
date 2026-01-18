@@ -1,0 +1,14 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'Rad.blg'
+[155] biber-MSWIN64:342> INFO - === 
+[209] Biber.pm:421> INFO - Reading 'Rad.bcf'
+[355] Biber.pm:1002> INFO - Found 7 citekeys in bib section 0
+[374] Biber.pm:4487> INFO - Processing section 0
+[389] Biber.pm:4678> INFO - Looking for bibtex file 'lib.bib' for section 0
+[447] bibtex.pm:1713> INFO - LaTeX decoding ...
+[462] bibtex.pm:1519> INFO - Found BibTeX data source 'lib.bib'
+[552] UCollate.pm:68> INFO - Overriding locale 'hr-HR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[552] UCollate.pm:68> INFO - Overriding locale 'hr-HR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[552] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'hr-HR'
+[564] bbl.pm:676> INFO - Writing 'Rad.bbl' with encoding 'UTF-8'
+[569] bbl.pm:779> INFO - Output to Rad.bbl
